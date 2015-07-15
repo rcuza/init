@@ -1,0 +1,5 @@
+""
+"" Vim Setup Run After Janus
+""
+" Define Theme
+color murphy

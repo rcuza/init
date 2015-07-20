@@ -15,6 +15,7 @@ fi
 brew cask install google-chrome
 brew cask install calibre
 brew cask install kindle
+brew cask install  send-to-kindle
 brew cask install encryptr
 brew cask install textmate
 brew cask install vlc

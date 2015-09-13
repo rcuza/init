@@ -12,12 +12,27 @@ else
   exit
 fi
 
-brew cask install google-chrome
 brew cask install calibre
-brew cask install kindle
-brew cask install  send-to-kindle
 brew cask install encryptr
+brew cask install google-chrome
+brew cask install kindle
+brew cask install libreoffice  # productivity
+brew cask install nightingale  # music player
+brew cask install menumeters   # ref below
+brew cask install send-to-kindle
 brew cask install textmate
 brew cask install vlc
 
+# UNIX Tools
 brew install macvim
+
+
+# Some PIP
+
+# install AWS Command Line Tools
+sudo pip install awscli
+
+
+# Reference
+# MenuMeters
+# http://www.ragingmenace.com/software/menumeters

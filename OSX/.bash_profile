@@ -1,3 +1,6 @@
+# If you have aws installed:
+# complete -C '/usr/local/bin/aws_completer' aws
+
 if [ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ]; then
     . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 fi

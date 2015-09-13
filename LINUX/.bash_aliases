@@ -1,3 +1,8 @@
+# Useful commands for getting multiple terminals in the same directory
+# Thanks to Keith Lofstrom for the idea.
+alias sd="pwd > ~/.sd"
+alias ds="cd \`cat ~/.sd\`"
+
 #shell prompt example
 
 #  Customize BASH PS1 prompt to show current GIT repository and branch.

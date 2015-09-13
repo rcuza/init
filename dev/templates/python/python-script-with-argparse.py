@@ -17,21 +17,22 @@ The help message goes here.
 '''
 
 
-class Usage(Exception):
-    def __init__(self, msg):
-        self.msg = msg
-
-
 def main(argv=None):
     if argv is None:
         argv = sys.argv
 
-    parser = argparse.ArgumentParser()
-    # Determine verbosity
-    parser.add_argument("-v", "--verbose", help="increase output verbosity",
-            action="store_true")
+    parser = argparse.ArgumentParser(
+            prog = '${TM_NEW_FILE_BASENAME}.py',
+            description = __doc__)
+    # Determine verbosity (optional argument)
+    parser.add_argument("-v", "--verbose",
+            help = "increase output verbosity",
+            action = "store_true",
+            default = False)
     # Example of mantitory positional argument
-    parser.add_argument("echo", help="This is a positional argument")
+    parser.add_argument("echo",
+            help="This is a positional argument",
+            nargs='+')
     args = parser.parse_args()
 
     if args.verbose:
@@ -39,6 +40,7 @@ def main(argv=None):
 
     print args.echo
 
+    pass
 
 
 if __name__ == "__main__":

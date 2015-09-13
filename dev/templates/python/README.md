@@ -11,3 +11,4 @@ no particular order:
 
 * Textmate Python Bundle - https://github.com/textmate/python.tmbundle
 * Python Docs - https://docs.python.org
+* Mastering Python by Daniel Arbuckle

@@ -8,8 +8,8 @@ Copyright (c) ${TM_YEAR} ${TM_ORGANIZATION_NAME}. All rights reserved.
 Template built on python v2.7
 """
 
-import sys
 import argparse
+import sys
 
 
 help_message = '''

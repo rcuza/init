@@ -46,9 +46,9 @@ def main(argv=None):
     args = parser.parse_args()
 
     if args.verbose:
-        print "verbosity turned on"
+        print("verbosity turned on")
 
-    print args.echo
+    print(args.echo)
 
     pass
 

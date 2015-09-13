@@ -10,3 +10,4 @@ Here are the people and sources that helped me create these templates in
 no particular order:
 
 * Textmate Python Bundle - https://github.com/textmate/python.tmbundle
+* Python Docs - https://docs.python.org

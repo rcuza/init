@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
+
 """
 ${TM_NEW_FILE_BASENAME}.py
 Created by ${TM_FULLNAME} on ${TM_DATE}.
@@ -45,8 +46,18 @@ def main(argv=None):
             nargs='+')
     args = parser.parse_args()
 
+    # Create verbose print function - works only in main
     if args.verbose:
-        print("verbosity turned on")
+        def verboseprint(*args):
+            # Print each argument separately so caller doesn't need to
+            # stuff everything to be printed into a single string
+            for arg in args:
+                print arg,
+            print
+    else:
+        verboseprint = lambda *a: None      # do-nothing function
+
+    verboseprint("verbosity turned on")
 
     print(args.echo)
 

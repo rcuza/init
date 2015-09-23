@@ -14,14 +14,14 @@ import unittest
 
 
 class ${TM_NEW_FILE_BASENAME}:
-	def __init__(self):
-		pass
+    def __init__(self):
+        pass
 
 
 class ${TM_NEW_FILE_BASENAME}Tests(unittest.TestCase):
-	def setUp(self):
-		pass
+    def setUp(self):
+        pass
 
 
 if __name__ == '__main__':
-	unittest.main()
+    unittest.main()

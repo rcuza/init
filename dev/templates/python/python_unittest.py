@@ -6,14 +6,15 @@ ${TM_NEW_FILE_BASENAME}.py
 Created by ${TM_FULLNAME} on ${TM_DATE}.
 Copyright (c) ${TM_YEAR} ${TM_ORGANIZATION_NAME}. All rights reserved.
 """
+from __future__ import absolute_import, division, print_function
 
 import unittest
 
 
 class ${TM_NEW_FILE_BASENAME}(unittest.TestCase):
-	def setUp(self):
-		pass
+    def setUp(self):
+        pass
 
 
 if __name__ == '__main__':
-	unittest.main()
+    unittest.main()

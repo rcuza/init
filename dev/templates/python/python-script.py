@@ -12,8 +12,12 @@ import os
 
 
 def main():
-	pass
+    """
+    Doc String
+    """
+
+    pass
 
 
 if __name__ == '__main__':
-	main()
+    main()

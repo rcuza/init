@@ -8,6 +8,13 @@ Copyright (c) ${TM_YEAR}, ${TM_ORGANIZATION_NAME}. All rights reserved.
 
 Template built on python v2.7
 """
+
+from __future__ import absolute_import, division, print_function
+
+import argparse
+import logging
+import sys
+
 LICENSE = """
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
@@ -17,52 +24,47 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
-from __future__ import absolute_import, division, print_function
 
-
-import argparse
-import sys
-
-
-help_message = '''
+HELP_MESSAGE = """
 The help message goes here.
-'''
+"""
+
+VERINFO = '0.0.0'
 
 
 def main(argv=None):
+    """
+    Steps if script is run directly
+    """
     if argv is None:
         argv = sys.argv
 
     parser = argparse.ArgumentParser(
-            prog='${TM_NEW_FILE_BASENAME}.py',
-            description=__doc__)
+        prog='${TM_NEW_FILE_BASENAME}.py',
+        description=HELP_MESSAGE)
     # Determine verbosity (optional argument)
-    parser.add_argument("-v", "--verbose",
-            help="increase output verbosity",
-            action="store_true",
-            default=False)
+    parser.add_argument(
+        "-v", "--verbose",
+        help="increase output verbosity",
+        action="store_true",
+        default=False)
     # Example of mantitory positional argument
-    parser.add_argument("echo",
-            help="This is a positional argument",
-            nargs='+')
+    parser.add_argument(
+        "echo",
+        help="This is a positional argument",
+        nargs='+')
     args = parser.parse_args()
 
-    # Create verbose print function - works only in main
+    # Change log level if using verbose
     if args.verbose:
-        def verboseprint(*args):
-            # Print each argument separately so caller doesn't need to
-            # stuff everything to be printed into a single string
-            for arg in args:
-                print(arg),
-            print
+        logging.basicConfig(format="%(levelname)s: %(message)s", level=logging.DEBUG)
+        logging.info("Verbose logging.")
+        logging.debug("Supplied Arguments: %s", args)
+        logging.debug("Version: %s", VERINFO)
     else:
-        verboseprint = lambda *a: None      # do-nothing function
-
-    verboseprint("verbosity turned on")
+        logging.basicConfig(format="%(message)s", level=logging.INFO)
 
     print(args.echo)
-
-    pass
 
 
 if __name__ == "__main__":

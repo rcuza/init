@@ -15,6 +15,10 @@ import argparse
 import logging
 import sys
 
+PROGRAM_NAME = '${TM_NEW_FILE_BASENAME}.py'
+
+VERINFO = '0.0.0'
+
 LICENSE = """
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
@@ -29,8 +33,6 @@ HELP_MESSAGE = """
 The help message goes here.
 """
 
-VERINFO = '0.0.0'
-
 
 def main(argv=None):
     """
@@ -40,7 +42,7 @@ def main(argv=None):
         argv = sys.argv
 
     parser = argparse.ArgumentParser(
-        prog='${TM_NEW_FILE_BASENAME}.py',
+        prog=PROGRAM_NAME,
         description=HELP_MESSAGE)
     # Determine verbosity (optional argument)
     parser.add_argument(

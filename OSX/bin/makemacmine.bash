@@ -31,7 +31,9 @@ echo "### brew some mac apps (cask)"
 brew cask install \
     calibre         \
     colloquy \
+    dropbox \
     encryptr        \
+    firefox \
     google-chrome   \
     iterm2 \
     kindle          \

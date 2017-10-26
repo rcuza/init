@@ -4,7 +4,7 @@
 
 if [ -f "`which brew`" ]
 then
-  echo "brew installed"
+  echo "** brew installed"
 else
   echo "Make sure brew and brew cask are installed and rerun this script."
   echo ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -12,7 +12,14 @@ else
   exit
 fi
 
-ansible-playbook /Users/raul/dev/rac/init/OSX/ansible/makemacmine.yml
+if [ -f "$(which ansible)" ]
+then
+  echo "** ansible installed"
+else
+  brew update && brew install ansible
+fi
+
+ansible-playbook ansible/makemacmine.yml
 
 # Reference
 # MenuMeters
@@ -57,9 +64,13 @@ function run_rake()
 function install_janus()
 {
   if [ ! -e "${HOME}/.vim/janus" -o "$1" == "--force" ]; then
+    echo "** installing janus"
     backup_previous_install
     clone_janus
+  else
+    echo "** janus installed"
   fi
+  echo "** updating janus"
   run_rake
 }
 install_janus

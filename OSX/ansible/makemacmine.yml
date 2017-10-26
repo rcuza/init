@@ -48,3 +48,28 @@
       - vlc
       #- yujitach-menumeters
 
+
+# Create ssh keys
+
+  - name: add .ssh dir
+    file:
+      path: ~/.ssh
+      state: directory
+      mode: 0700
+
+  - name: add new schoology ssh key
+    shell: ssh-keygen -b 4096 -t rsa -f ~/.ssh/id_rsa -q -N ""
+    args:
+      creates: ~/.ssh/id_rsa
+
+  - name: add new personal ssh key
+    shell: ssh-keygen -b 4096 -t rsa -f ~/.ssh/personal_id_rsa -q -N ""
+    args:
+      creates: ~/.ssh/personal_id_rsa
+
+# Ferify standard dev env
+  - name: add dev dir
+    file:
+      path: ~/dev
+      state: directory
+      mode: 0755

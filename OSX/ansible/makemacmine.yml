@@ -1,0 +1,50 @@
+# credit to Brian Annis for paving the path
+---
+- hosts: localhost
+  gather_facts: yes
+  connection: local
+
+  tasks:
+  - name: install taps with homebrew
+    homebrew:
+      name: "{{ item }}"
+      state: present
+      update_homebrew: yes
+      upgrade_all: yes
+    with_items:
+      - awscli
+      - consul
+      - git
+      - go
+      - graphviz
+      - python
+      - python3
+      - terraform
+      - vagrant-completion
+      - vault
+
+  - name: install taps with homebrew casks
+    homebrew_cask:
+      name: "{{ item }}"
+      state: present
+      update_homebrew: yes
+    with_items:
+      - calibre
+      - colloquy
+      - dropbox
+      - encryptr
+      - firefox
+      - google-chrome
+      - iterm2
+      - kindle
+      - libreoffice
+      - mactex
+      - macvim
+      # - menumeters
+      - slack
+      - textmate
+      - vagrant
+      - virtualbox
+      - vlc
+      #- yujitach-menumeters
+

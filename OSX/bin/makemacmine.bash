@@ -12,42 +12,7 @@ else
   exit
 fi
 
-brew update
-
-echo "### brew some unix commands"
-brew install \
-    awscli \
-    consul \
-    git \
-    go \
-    graphviz \
-    python          \
-    python3         \
-    terraform \
-    vagrant-completion \
-    vault
-
-echo "### brew some mac apps (cask)"
-brew cask install \
-    calibre         \
-    colloquy \
-    dropbox \
-    encryptr        \
-    firefox \
-    google-chrome   \
-    iterm2 \
-    kindle          \
-    libreoffice     \
-    mactex          \
-    macvim          \
-    nightingale     \
-    menumeters      \
-    slack \
-    textmate        \
-    vagrant \
-    virtualbox \
-    vlc \
-    yujitach-menumeters
+ansible-playbook /Users/raul/dev/rac/init/OSX/ansible/makemacmine.yml
 
 # Reference
 # MenuMeters

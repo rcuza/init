@@ -14,11 +14,19 @@
     with_items:
       - awscli
       - consul
+      - docker-machine
+      - docker-machine-driver-xhyve
       - git
       - go
       - graphviz
+      - kops
+      - kubernetes-cli
+      - kubernetes-helm
+      - ocaml
+      - opam
       - python
       - python3
+      - shellcheck
       - terraform
       - vagrant-completion
       - vault
@@ -41,7 +49,9 @@
       - mactex
       - macvim
       # - menumeters
+      - minikube
       - slack
+      - sourcetree
       - textmate
       - vagrant
       - virtualbox

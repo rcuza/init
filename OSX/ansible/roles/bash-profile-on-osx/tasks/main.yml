@@ -1,0 +1,6 @@
+---
+  - name: install .bash_profile
+    template:
+      src: bash_profile.j2
+      dest: ~/.bash_profile
+      mode: 0644

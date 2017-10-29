@@ -78,6 +78,7 @@
       mode: 0755
 
   roles:
+    - bash-profile-on-osx
     - docker-on-osx
     - kubernetes-on-osx
 

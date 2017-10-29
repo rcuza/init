@@ -1,0 +1,16 @@
+---
+  - name: install taps with homebrew
+    homebrew:
+      name: "{{ item }}"
+      state: present
+      update_homebrew: yes
+      upgrade_all: yes
+    with_items:
+      - autoconf
+      - automake
+      - docker-machine
+        # With hyperkit these are probably not needed
+        #- docker-machine-driver-xhyve
+        #- ocaml
+        #- opam
+        #- virtualbox

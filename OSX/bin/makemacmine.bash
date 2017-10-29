@@ -19,7 +19,7 @@ else
   brew update && brew install ansible
 fi
 
-ansible-playbook ansible/makemacmine.yml
+cd ansible && ansible-playbook makemacmine.yml && cd -
 
 # Reference
 # MenuMeters

@@ -1,4 +1,4 @@
-# credit to Brian Annis for paving the path
+# thanks to Brian Annis [https://github.com/brianannis] for proving the value
 ---
 - hosts: localhost
   gather_facts: yes
@@ -14,16 +14,12 @@
     with_items:
       - awscli
       - consul
-      - docker-machine
-      - docker-machine-driver-xhyve
       - git
       - go
       - graphviz
       - kops
       - kubernetes-cli
       - kubernetes-helm
-      - ocaml
-      - opam
       - python
       - python3
       - shellcheck
@@ -48,14 +44,15 @@
       - libreoffice
       - mactex
       - macvim
-      # - menumeters
       - minikube
       - slack
       - sourcetree
       - textmate
       - vagrant
-      - virtualbox
       - vlc
+      ## optional taps
+      # - menumeters
+      #- virtualbox
       #- yujitach-menumeters
 
 
@@ -83,3 +80,7 @@
       path: ~/dev
       state: directory
       mode: 0755
+
+  roles:
+    - docker-on-osx
+

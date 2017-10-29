@@ -17,9 +17,6 @@
       - git
       - go
       - graphviz
-      - kops
-      - kubernetes-cli
-      - kubernetes-helm
       - python
       - python3
       - shellcheck
@@ -44,7 +41,6 @@
       - libreoffice
       - mactex
       - macvim
-      - minikube
       - slack
       - sourcetree
       - textmate
@@ -83,4 +79,5 @@
 
   roles:
     - docker-on-osx
+    - kubernetes-on-osx
 

@@ -1,0 +1,7 @@
+---
+all:
+  children:
+    macmine:
+      hosts:
+        localhost
+

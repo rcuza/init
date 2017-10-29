@@ -1,6 +1,6 @@
 # thanks to Brian Annis [https://github.com/brianannis] for proving the value
 ---
-- hosts: localhost
+- hosts: macmine
   gather_facts: yes
   connection: local
 

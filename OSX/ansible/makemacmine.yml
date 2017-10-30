@@ -17,6 +17,7 @@
       - git
       - go
       - graphviz
+      - openvpn
       - python
       - python3
       - shellcheck

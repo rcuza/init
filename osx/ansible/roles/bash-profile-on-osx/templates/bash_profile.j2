@@ -1,6 +1,13 @@
 ## Managed by Ansible
 ## local changes will be overwritten
 
+# aliases
+alias sd='pwd > ~/.bash_sd'
+alias ds='cd $(cat ~/.bash_sd)'
+
+# env variables
+export EDITOR=vim
+
 # add all bash completions
 
 bcdir=/usr/local/etc/bash_completion.d

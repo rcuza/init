@@ -17,6 +17,10 @@
       - git
       - go
       - graphviz
+      - lua
+      - luajit
+      - macvim
+      - openvpn
       - python
       - python3
       - shellcheck
@@ -30,17 +34,19 @@
       state: present
       update_homebrew: yes
     with_items:
+      - amazon-music
       - calibre
+      - chefdk
       - colloquy
       - dropbox
       - encryptr
       - firefox
       - google-chrome
+      - hipchat
       - iterm2
       - kindle
       - libreoffice
       - mactex
-      - macvim
       - slack
       - sourcetree
       - textmate

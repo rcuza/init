@@ -5,7 +5,7 @@
   connection: local
 
   tasks:
-  - name: install taps with homebrew
+  - name: brew taps
     homebrew:
       name: "{{ item }}"
       state: present
@@ -17,6 +17,7 @@
       - git
       - go
       - graphviz
+      - jq
       - lua
       - luajit
       - macvim
@@ -28,7 +29,7 @@
       - vagrant-completion
       - vault
 
-  - name: install taps with homebrew casks
+  - name: brew cask taps
     homebrew_cask:
       name: "{{ item }}"
       state: present

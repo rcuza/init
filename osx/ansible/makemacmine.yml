@@ -26,6 +26,7 @@
       - python3
       - shellcheck
       - terraform
+      - tree
       - vagrant-completion
       - vault
 
@@ -52,10 +53,10 @@
       - sourcetree
       - textmate
       - vagrant
+      - virtualbox
       - vlc
       ## optional taps
-      # - menumeters
-      #- virtualbox
+      #- menumeters
       #- yujitach-menumeters
 
 

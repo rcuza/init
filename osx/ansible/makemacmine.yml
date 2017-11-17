@@ -38,7 +38,6 @@
     with_items:
       - amazon-music
       - calibre
-      - chefdk
       - colloquy
       - dropbox
       - encryptr
@@ -89,4 +88,5 @@
     - bash-profile-on-osx
     - docker-on-osx
     - kubernetes-on-osx
+    - chef-ops
 

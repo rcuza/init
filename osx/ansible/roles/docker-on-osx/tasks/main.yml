@@ -9,11 +9,8 @@
       - autoconf
       - automake
       - docker
-      - docker-completion
       - docker-compose
-      - docker-compose-completion
       - docker-machine
-      - docker-machine-completion
         # With hyperkit these are probably not needed
         #- docker-machine-driver-xhyve
         #- ocaml

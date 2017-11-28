@@ -1,0 +1,21 @@
+---
+  - name: brew cask taps for chef
+    homebrew_cask:
+      name: "{{ item }}"
+      state: present
+      update_homebrew: yes
+    with_items:
+      - chefdk
+
+  - name: create chef config dir
+    file:
+      path: "{{ ansible_env.HOME }}/.chef"
+      state: directory
+      mode: 0755
+
+  - name: add knife.rb template
+    template:
+      src: knife.rb.j2
+      dest: "{{ ansible_env.HOME }}/.chef/knife.rb.template"
+      owner: "{{ ansible_env.USER }}"
+      mode: 0644

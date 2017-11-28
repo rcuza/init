@@ -1,0 +1,7 @@
+log_level                :info
+log_location             STDOUT
+node_name                "{{ ansible_env.USER }}"
+client_key               "~/.chef/{{ ansible_env.USER }}.pem"
+chef_server_url          "https://chef.exmample.com/organizations/staging"
+cookbook_path            "{{ ansible_env.HOME }}/dev/example.com/chef-repo/cookbooks"
+knife[:editor]           = 'vim'

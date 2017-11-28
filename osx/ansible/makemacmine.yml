@@ -5,7 +5,7 @@
   connection: local
 
   tasks:
-  - name: install taps with homebrew
+  - name: brew taps
     homebrew:
       name: "{{ item }}"
       state: present
@@ -17,6 +17,7 @@
       - git
       - go
       - graphviz
+      - jq
       - lua
       - luajit
       - macvim
@@ -25,10 +26,11 @@
       - python3
       - shellcheck
       - terraform
+      - tree
       - vagrant-completion
       - vault
 
-  - name: install taps with homebrew casks
+  - name: brew cask taps
     homebrew_cask:
       name: "{{ item }}"
       state: present
@@ -36,7 +38,6 @@
     with_items:
       - amazon-music
       - calibre
-      - chefdk
       - colloquy
       - dropbox
       - encryptr
@@ -51,10 +52,10 @@
       - sourcetree
       - textmate
       - vagrant
+      - virtualbox
       - vlc
       ## optional taps
-      # - menumeters
-      #- virtualbox
+      #- menumeters
       #- yujitach-menumeters
 
 
@@ -85,6 +86,8 @@
 
   roles:
     - bash-profile-on-osx
-    - docker-on-osx
+      # using Docker for Mac (Nov 2017)
+      # - docker-on-osx
     - kubernetes-on-osx
+    - chef-ops
 

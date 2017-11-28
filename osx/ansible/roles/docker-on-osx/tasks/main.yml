@@ -1,5 +1,5 @@
 ---
-  - name: install taps with homebrew
+  - name: brew taps for docker
     homebrew:
       name: "{{ item }}"
       state: present
@@ -8,9 +8,14 @@
     with_items:
       - autoconf
       - automake
+      - docker
+      - docker-compose
       - docker-machine
         # With hyperkit these are probably not needed
         #- docker-machine-driver-xhyve
         #- ocaml
         #- opam
         #- virtualbox
+        #
+        #
+

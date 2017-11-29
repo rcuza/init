@@ -5,6 +5,10 @@
   connection: local
 
   tasks:
+  - homebrew_tap:
+      name: wallix/awless
+      state: present
+
   - name: brew taps
     homebrew:
       name: "{{ item }}"
@@ -13,6 +17,7 @@
       upgrade_all: yes
     with_items:
       - awscli
+      - awless
       - consul
       - git
       - go

@@ -24,7 +24,7 @@
     - python3
 
 
-- name: install pip packages
+- name: install pip3 virtualenv packages
   pip:
     name: "{{ item }}"
     executable: pip3
@@ -33,3 +33,11 @@
     virtualenv
     virtualenvwrapper
 
+- name: install pip2 virtualenv packages
+  pip:
+    name: "{{ item }}"
+    executable: pip2
+    state: present
+  with_items:
+    virtualenv
+    virtualenvwrapper

@@ -22,13 +22,12 @@
       - git
       - go
       - graphviz
+      - htop
       - jq
       - lua
       - luajit
       - macvim
       - openvpn
-      - python
-      - python3
       - shellcheck
       - terraform
       - tree
@@ -95,4 +94,5 @@
       # - docker-on-osx
     - kubernetes-on-osx
     - chef-ops
+    - python-on-osx
 

@@ -1,0 +1,20 @@
+---
+  - name: brew taps for python2 and python3
+    homebrew:
+      name: "{{ item }}"
+      state: present
+      update_homebrew: yes
+      upgrade_all: yes
+    with_items:
+      - python2
+      - python3
+
+
+  - name: install pip packages
+    pip:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      virtualenv
+      virtualenvwrapper
+

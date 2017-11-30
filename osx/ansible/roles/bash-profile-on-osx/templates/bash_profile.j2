@@ -22,6 +22,27 @@ then
   done
 fi
 
+# add python and virtualenv stuff
+
+# virtualenvwrapper
+export WORKON_HOME=${HOME}/dev/virtualenvs
+export PROJECT_HOME=${HOME}/dev
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+# Python 2.6.1
+#alias mkve26='mkvirtualenv --no-site-packages'
+# Python 2.7.1
+#alias mkve='mkvirtualenv --no-site-packages --python=/usr/local/Cellar/python/2.7.1/bin/python'
+#alias mkveqt='mkvirtualenv --python=/usr/local/Cellar/python/2.7.1/bin/python'
+#alias designer='open /usr/local/Cellar/qt/4.7.2/bin/Designer.app'
+# Python 3.2
+#alias mkve3='mkvirtualenv --no-site-packages --python=/usr/local/Cellar/python3/3.2/bin/python3'
+
+# Ammend python path for Homebrew PyQt
+export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+
 # default OS X prompt
 # PS1="\h:\W \u\$"
 

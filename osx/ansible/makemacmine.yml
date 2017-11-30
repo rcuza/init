@@ -5,6 +5,13 @@
   connection: local
 
   tasks:
+  - name: create dev folder
+    file:
+      path: "{{ ansible_env['HOME'] }}/dev"
+      owner: "{{ ansible_env['USER'] }}"
+      mode: '0755'
+      state: directory
+
   - homebrew_tap:
       name: wallix/awless
       state: present
@@ -43,6 +50,7 @@
       - amazon-music
       - calibre
       - colloquy
+      - coconutbattery
       - dropbox
       - encryptr
       - firefox

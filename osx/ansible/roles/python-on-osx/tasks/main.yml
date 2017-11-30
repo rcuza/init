@@ -27,6 +27,7 @@
 - name: install pip packages
   pip:
     name: "{{ item }}"
+    executable: pip3
     state: present
   with_items:
     virtualenv

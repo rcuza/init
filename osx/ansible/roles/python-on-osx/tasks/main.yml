@@ -23,6 +23,13 @@
     - python2
     - python3
 
+- name: brew casks taps for python
+  homebrew_casks:
+    name: "{{ item }}"
+      state: present
+      update_homebrew: yes
+    with_items:
+      pycharm-ce
 
 - name: install pip3 virtualenv packages
   pip:

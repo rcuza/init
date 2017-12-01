@@ -1,0 +1,43 @@
+---
+- name: create dev folder
+  file:
+    path: "{{ ansible_env['HOME'] }}/dev"
+    owner: "{{ ansible_env['USER'] }}"
+    mode: '0755'
+    state: directory
+
+- name: create virtualenv folder
+  file:
+    path: "{{ ansible_env['HOME'] }}/dev/virtualenvs"
+    owner: "{{ ansible_env['USER'] }}"
+    mode: '0755'
+    state: directory
+
+- name: brew taps for python2 and python3
+  homebrew:
+    name: "{{ item }}"
+    state: present
+    update_homebrew: yes
+    upgrade_all: yes
+  with_items:
+    - python2
+    - python3
+
+
+- name: install pip3 virtualenv packages
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+    state: present
+  with_items:
+    virtualenv
+    virtualenvwrapper
+
+- name: install pip2 virtualenv packages
+  pip:
+    name: "{{ item }}"
+    executable: pip2
+    state: present
+  with_items:
+    virtualenv
+    virtualenvwrapper

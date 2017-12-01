@@ -5,6 +5,17 @@
   connection: local
 
   tasks:
+  - name: create dev folder
+    file:
+      path: "{{ ansible_env['HOME'] }}/dev"
+      owner: "{{ ansible_env['USER'] }}"
+      mode: '0755'
+      state: directory
+
+  - homebrew_tap:
+      name: wallix/awless
+      state: present
+
   - name: brew taps
     homebrew:
       name: "{{ item }}"
@@ -13,17 +24,17 @@
       upgrade_all: yes
     with_items:
       - awscli
+      - awless
       - consul
       - git
       - go
       - graphviz
+      - htop
       - jq
       - lua
       - luajit
       - macvim
       - openvpn
-      - python
-      - python3
       - shellcheck
       - terraform
       - tree
@@ -39,6 +50,7 @@
       - amazon-music
       - calibre
       - colloquy
+      - coconutbattery
       - dropbox
       - encryptr
       - firefox
@@ -90,4 +102,5 @@
       # - docker-on-osx
     - kubernetes-on-osx
     - chef-ops
+    - python-on-osx
 

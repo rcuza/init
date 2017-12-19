@@ -14,16 +14,8 @@ alias ds='cd $(cat ~/.bash_sd)'
 # env variables
 export EDITOR=vim
 
-# add all bash completions
-
-bcdir=/usr/local/etc/bash_completion.d
-
-if [ -d ${bcdir} ]
-then
-  for bcfile in ${bcdir}/* ; do
-    . $bcfile
-  done
-fi
+# add bash completions
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # add python and virtualenv stuff
 

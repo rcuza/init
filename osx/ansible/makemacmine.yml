@@ -25,6 +25,7 @@
     with_items:
       - awscli
       - awless
+      - bash-completion
       - consul
       - git
       - go

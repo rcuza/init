@@ -36,6 +36,7 @@
       - luajit
       - macvim
       - openvpn
+      - packer
       - shellcheck
       - terraform
       - tree

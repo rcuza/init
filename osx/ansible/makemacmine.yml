@@ -27,6 +27,7 @@
       - awless
       - bash-completion
       - consul
+      - dos2unix
       - git
       - go
       - graphviz

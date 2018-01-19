@@ -38,6 +38,7 @@
       - macvim
       - openvpn
       - packer
+      - ruby
       - shellcheck
       - terraform
       - tree

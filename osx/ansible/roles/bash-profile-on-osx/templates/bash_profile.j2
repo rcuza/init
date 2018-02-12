@@ -2,7 +2,12 @@
 ## local changes will be overwritten
 
 # add local changes
-source ${HOME}/.bash_profile.d/*
+for script in ${HOME}/.bash_profile.d/*.sh ; do
+  if [ -r ${script} ]
+  then
+    source ${script}
+  fi
+done
 
 # PATH
 export PATH="/usr/local/sbin:${PATH}"

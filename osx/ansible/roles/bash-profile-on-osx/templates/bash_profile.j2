@@ -27,6 +27,7 @@ export EDITOR=vim
 export WORKON_HOME=${HOME}/dev/virtualenvs
 export PROJECT_HOME=${HOME}/dev
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
@@ -40,8 +41,8 @@ fi
 # Python 3.2
 #alias mkve3='mkvirtualenv --no-site-packages --python=/usr/local/Cellar/python3/3.2/bin/python3'
 
-# Ammend python path for Homebrew PyQt
-export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+# Amend PATH for python@2
+export PATH="${PATH}:/usr/local/opt/python@2/bin"
 
 # default OS X prompt
 # PS1="\h:\W \u\$"

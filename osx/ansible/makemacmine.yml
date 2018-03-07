@@ -29,6 +29,7 @@
       - consul
       - dos2unix
       - git
+      - gnuplot
       - go
       - graphviz
       - htop
@@ -51,7 +52,6 @@
       state: present
       update_homebrew: yes
     with_items:
-      - amazon-music
       - calibre
       - colloquy
       - coconutbattery
@@ -63,7 +63,6 @@
       - kindle
       - libreoffice
       - mactex
-      - malwarebytes
       - slack
       - sourcetree
       - textmate
@@ -71,6 +70,8 @@
       - virtualbox
       - vlc
       ## optional taps
+      #- amazon-music BROKEN
+      #- malwarebytes
       #- menumeters
       #- yujitach-menumeters
 

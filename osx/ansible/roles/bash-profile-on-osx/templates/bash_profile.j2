@@ -22,17 +22,7 @@ export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
 
 # add all bash completions
-# add bash completions
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-
-bcdir=/usr/local/etc/bash_completion.d
-
-if [ -d ${bcdir} ]
-then
-  for bcfile in ${bcdir}/* ; do
-    . $bcfile
-  done
-fi
+source /usr/local/etc/bash_completion
 
 # add python and virtualenv stuff
 

@@ -39,12 +39,3 @@
   with_items:
     - virtualenv
     - virtualenvwrapper
-
-- name: install pip2 virtualenv packages
-  pip:
-    name: "{{ item }}"
-    executable: pip2
-    state: present
-  with_items:
-    - virtualenv
-    - virtualenvwrapper

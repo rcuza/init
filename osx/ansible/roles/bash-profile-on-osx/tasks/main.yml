@@ -5,10 +5,10 @@
       state: directory
       mode: 0700
 
-  - name: install bash_aliases
+  - name: install bash_aliases.sh
     template:
-      src: bash_aliases.j2
-      dest: "{{ ansible_env.HOME }}/.bash_profile.d/bash_aliases"
+      src: bash_aliases.sh.j2
+      dest: "{{ ansible_env.HOME }}/.bash_profile.d/bash_aliases.sh"
       mode: 0644
 
   - name: install .bash_profile

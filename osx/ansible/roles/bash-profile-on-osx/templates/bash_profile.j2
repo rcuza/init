@@ -1,14 +1,16 @@
 ## Managed by Ansible
 ## local changes will be overwritten
 
+# add local changes
+source ${HOME}/.bash_profile.d/*
+
+# PATH
+export PATH="/usr/local/sbin:${PATH}"
+
 # bash history
 export HISTCONTROL=ignoreboth
 
-# aliases
-alias sd='pwd > ~/.bash_sd'
-alias ds='cd $(cat ~/.bash_sd)'
-
-# sane defaults
+# env variables
 export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
 
@@ -20,6 +22,8 @@ export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
 
 # add all bash completions
+# add bash completions
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 bcdir=/usr/local/etc/bash_completion.d
 

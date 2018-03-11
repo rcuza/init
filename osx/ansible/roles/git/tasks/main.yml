@@ -1,0 +1,10 @@
+---
+- name: add git aliases
+  ini_file:
+    path: "{{ ansible_env.HOME }}/.gitconfig
+    section: alias
+    option: "{{ item.key }}"
+    value: "{{ item.value }}"
+    mode: 0600
+    backup: yes
+  with_dict: "{{ aliases }}"

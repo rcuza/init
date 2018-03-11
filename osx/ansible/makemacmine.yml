@@ -25,7 +25,9 @@
     with_items:
       - awscli
       - awless
+      - bash-completion
       - consul
+      - dos2unix
       - git
       - go
       - graphviz
@@ -35,6 +37,8 @@
       - luajit
       - macvim
       - openvpn
+      - packer
+      - ruby
       - shellcheck
       - terraform
       - tree
@@ -55,11 +59,11 @@
       - encryptr
       - firefox
       - google-chrome
-      - hipchat
       - iterm2
       - kindle
       - libreoffice
       - mactex
+      - malwarebytes
       - slack
       - sourcetree
       - textmate

@@ -63,7 +63,7 @@
       - kindle
       - libreoffice
       - mactex
-      - malwarebytes
+      - nightingale
       - slack
       - sourcetree
       - textmate
@@ -73,6 +73,7 @@
       ## optional taps
       #- menumeters
       #- yujitach-menumeters
+      #- malwarebytes
 
 
 # Create ssh keys

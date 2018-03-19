@@ -64,6 +64,7 @@
       - libreoffice
       - mactex
       - nightingale
+      - racket
       - slack
       - sourcetree
       - textmate

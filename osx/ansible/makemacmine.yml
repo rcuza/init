@@ -32,6 +32,7 @@
       - gnuplot
       - go
       - graphviz
+      - gron
       - htop
       - jq
       - lua

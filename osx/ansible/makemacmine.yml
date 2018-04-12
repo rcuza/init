@@ -7,8 +7,8 @@
   tasks:
   - name: create dev folder
     file:
-      path: "{{ ansible_env['HOME'] }}/dev"
-      owner: "{{ ansible_env['USER'] }}"
+      path: "{{ ansible_env.HOME }}/dev"
+      owner: "{{ ansible_env.USER }}"
       mode: '0755'
       state: directory
 
@@ -78,32 +78,6 @@
       #- menumeters
       #- yujitach-menumeters
 
-
-# Create ssh keys
-
-  - name: add .ssh dir
-    file:
-      path: ~/.ssh
-      state: directory
-      mode: 0700
-
-  - name: add new default ssh key
-    shell: ssh-keygen -b 4096 -t rsa -f ~/.ssh/id_rsa -q -N ""
-    args:
-      creates: ~/.ssh/id_rsa
-
-  - name: add new personal ssh key
-    shell: ssh-keygen -b 4096 -t rsa -f ~/.ssh/personal_id_rsa -q -N ""
-    args:
-      creates: ~/.ssh/personal_id_rsa
-
-# Ferify standard dev env
-  - name: add dev dir
-    file:
-      path: ~/dev
-      state: directory
-      mode: 0755
-
   roles:
     - bash-profile-on-osx
       # using Docker for Mac (Nov 2017)
@@ -111,4 +85,5 @@
     - kubernetes-on-osx
     - chef-ops
     - python-on-osx
+    - ssh-on-osx
 

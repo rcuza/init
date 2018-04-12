@@ -16,3 +16,9 @@
       src: bash_profile.j2
       dest: "{{ ansible_env.HOME }}/.bash_profile"
       mode: 0644
+
+  - name: install .bash_logout
+    template:
+      src: bash_logout.j2
+      dest: "{{ ansible_env.HOME }}/.bash_logout"
+      mode: 0644

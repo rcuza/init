@@ -11,7 +11,7 @@
     file:
       path: "{{ ansible_env.HOME }}/.chef"
       state: directory
-      mode: 0755
+      mode: 0700
 
   - name: add knife.rb template
     template:

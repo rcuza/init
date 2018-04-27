@@ -52,8 +52,14 @@ fi
 # Amend PATH for python@2
 export PATH="${PATH}:/usr/local/opt/python@2/bin"
 
-# Set path for ssh-agent (see ssh-on-osx role)
-export SSH_AUTH_SOCK={{ ansible_env.HOME }}/Library/.ssh-agent.sock
+# Start ssh-agent and set custom path for ssh-agent
+default_ssh_auth_sock={{ ansible_env.HOME }}/Library/.ssh-agent.sock
+if [ ! -S ${default_ssh_auth_sock} ]; then
+  eval `ssh-agent`
+  ln -sf "$SSH_AUTH_SOCK" ${default_ssh_auth_sock}
+fi
+export SSH_AUTH_SOCK=${default_ssh_auth_sock}
+ssh-add -l > /dev/null || ssh-add
 
 # default OS X prompt
 # PS1="\h:\W \u\$"

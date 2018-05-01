@@ -71,6 +71,7 @@
       - textmate
       - vagrant
       - virtualbox
+      - visual-studio-code
       - vlc
       ## optional taps
       #- amazon-music BROKEN

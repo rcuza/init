@@ -22,6 +22,7 @@
   with_items:
     - python2
     - python3
+    - ipython
 
 - name: brew cask taps for python
   homebrew_cask:

@@ -55,7 +55,7 @@
     with_items:
       - calibre
       - colloquy
-      - coconutbattery
+      - diffmerge
       - dropbox
       - encryptr
       - firefox

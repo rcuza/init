@@ -6,9 +6,10 @@ if [ -f "`which brew`" ]
 then
   echo "** brew installed"
 else
+  echo "ERR missing brew"
   echo "Make sure brew and brew cask are installed and rerun this script."
-  echo ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  echo "brew install caskroom/cask/brew-cask"
+  echo "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install > /tmp/brew_install_from_init"
+  echo "ruby /tmp/brew_install_from_init"
   exit
 fi
 
@@ -19,11 +20,14 @@ else
   brew update && brew install ansible
 fi
 
-cd ansible && ansible-playbook makemacmine.yml && cd -
-
-# Reference
-# MenuMeters
-# http://www.ragingmenace.com/software/menumeters
+if [ -d ansible]
+then
+  cd ansible && ansible-playbook makemacmine.yml && cd -
+else
+  echo "ERR missing ansible directory"
+  echo "you might need to run 'git clone https://github.com/rcuza/init.git' to get it"
+  exit
+fi
 
 ####
 # Install Janus

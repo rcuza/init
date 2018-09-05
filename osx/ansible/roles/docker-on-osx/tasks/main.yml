@@ -1,21 +1,7 @@
 ---
-  - name: brew taps for docker
+  - name: brew cask docker
     homebrew:
-      name: "{{ item }}"
+      name: "docker"
       state: present
       update_homebrew: yes
       upgrade_all: yes
-    with_items:
-      - autoconf
-      - automake
-      - docker
-      - docker-compose
-      - docker-machine
-        # With hyperkit these are probably not needed
-        #- docker-machine-driver-xhyve
-        #- ocaml
-        #- opam
-        #- virtualbox
-        #
-        #
-

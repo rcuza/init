@@ -30,7 +30,7 @@
     args:
       creates: ~/.ssh/id_rsa
 
-  - name: add new personal ssh key
-    shell: 'ssh-keygen -b 4096 -t rsa -f {{ ansible_env.HOME }}/.ssh/personal_id_rsa -q -N ""'
+  - name: add Ed25519 ssh key
+    shell: 'ssh-keygen -t Ed25519 -f {{ ansible_env.HOME }}/.ssh/id_ed25519 -q -N ""'
     args:
-      creates: ~/.ssh/personal_id_rsa
+      creates: ~/.ssh/id_ed25519

@@ -20,7 +20,7 @@ else
   brew update && brew install ansible
 fi
 
-if [ -d ansible]
+if [ -d "ansible" ]
 then
   cd ansible && ansible-playbook makemacmine.yml && cd -
 else

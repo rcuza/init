@@ -30,7 +30,6 @@
       - dos2unix
       - git
       - gnuplot
-      - go
       - graphviz
       - gron
       - htop
@@ -72,8 +71,8 @@
       - spotify
       - textmate
       - vagrant
-      - virtualbox
-      - visual-studio-code
+        #- virtualbox
+        #- visual-studio-code
       - vlc
       ## optional taps
       #- amazon-music BROKEN
@@ -86,7 +85,8 @@
       # using Docker for Mac (Nov 2017)
       # - docker-on-osx
     - kubernetes-on-osx
-    - chef-ops
+      #- chef-ops
+    - go-on-osx
     - python-on-osx
     - ssh-on-osx
 

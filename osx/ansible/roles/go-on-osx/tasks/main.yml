@@ -1,0 +1,14 @@
+---
+  - name: brew go language
+    homebrew:
+      name: "go"
+      state: present
+      update_homebrew: yes
+      upgrade_all: yes
+
+  - name: brew cask golang ide
+    homebrew_cask:
+      name: "golang"
+      state: present
+      update_homebrew: yes
+      upgrade_all: yes

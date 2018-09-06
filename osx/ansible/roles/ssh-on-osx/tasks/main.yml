@@ -1,24 +1,4 @@
 ---
-  # - name: install taps with homebrew
-  #   homebrew:
-  #     name: "{{ item }}"
-  #     state: present
-  #   with_items:
-  #     - openssh
-
-  #- name: install launchagent for ssh-agent
-  #  template:
-  #    src: org.homebrew.ssh-agent.plist.j2
-  #    dest: "{{ ansible_env.HOME }}/Library/LaunchAgents/org.homebrew.ssh-agent.plist"
-  #    mode: 0644
-
-  #- name: launchctl load homebrew-ssh-agent
-  #  command: "launchctl load {{ ansible_env.HOME }}/Library/LaunchAgents/org.homebrew.ssh-agent.plist"
-
-  #- name: launchctl stop ssh-agent
-  #  command: "launchctl stop org.openbsd.ssh-agent"
-  #  ignore_errors: yes
-
   - name: add .ssh dir
     file:
       path: "{{ ansible_env.HOME }}/.ssh"
@@ -26,11 +6,23 @@
       mode: 0700
 
   - name: add new default ssh key
-    shell: 'ssh-keygen -b 4096 -t rsa -f {{ ansible_env.HOME }}/.ssh/id_rsa -q -N ""'
+    command: 'ssh-keygen -b 4096 -t rsa -f {{ ansible_env.HOME }}/.ssh/id_rsa -q -N ""'
     args:
       creates: ~/.ssh/id_rsa
 
   - name: add Ed25519 ssh key
-    shell: 'ssh-keygen -t Ed25519 -f {{ ansible_env.HOME }}/.ssh/id_ed25519 -q -N ""'
+    command: 'ssh-keygen -t Ed25519 -f {{ ansible_env.HOME }}/.ssh/id_ed25519 -q -N ""'
     args:
       creates: ~/.ssh/id_ed25519
+
+  - name: check for existance of rsa key passphrase
+    command: 'ssh-keygen -p  -P "" -N "" -f {{ ansible_env.HOME }}/.ssh/id_rsa'
+    register: sshkeygen_cmd
+    failed_when: sshkeygen_cmd.rc == 0
+    changed_when: False
+
+  - name: check for existance of Ed25519 key passphrase
+    command: 'ssh-keygen -p  -P "" -N "" -f {{ ansible_env.HOME }}/.ssh/id_ed25519'
+    register: sshkeygen_cmd
+    failed_when: sshkeygen_cmd.rc == 0
+    changed_when: False

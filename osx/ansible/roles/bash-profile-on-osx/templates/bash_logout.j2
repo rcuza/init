@@ -1,1 +1,7 @@
-eval `ssh-agent -k`
+pgrep bash &> /dev/null
+pbash = $?
+
+if [[ ${pbash} == 1 ]]
+then
+  eval `ssh-agent -k`
+fi

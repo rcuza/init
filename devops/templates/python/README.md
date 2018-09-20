@@ -2,6 +2,7 @@
 
 To save me time initiating python scripts, here are some templates.
 
+To install run `cookiecutter ${PATH}` to template directory.
 
 
 # Thanks and Sources

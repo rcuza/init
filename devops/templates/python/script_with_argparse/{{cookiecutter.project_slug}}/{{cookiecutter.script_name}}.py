@@ -2,9 +2,9 @@
 # encoding: utf-8
 
 """
-${TM_NEW_FILE_BASENAME}.py
-Created by ${TM_FULLNAME} on ${TM_DATE}.
-Copyright (c) ${TM_YEAR}, ${TM_ORGANIZATION_NAME}. All rights reserved.
+{{cookiecutter.script_name}}.py
+Created by {{cookiecutter.author_name}} on {{cookiecutter.date}}.
+Copyright (c) {{cookiecutter.date.split("-")[0]}}, {{cookiecutter.organization_name}}. All rights reserved.
 
 Template built for python v2.7 and v3.6
 """
@@ -15,9 +15,9 @@ import argparse
 import logging
 import sys
 
-PROGRAM_NAME = '${TM_NEW_FILE_BASENAME}.py'
+PROGRAM_NAME = '{{cookiecutter.script_name}}.py'
 
-VERINFO = '0.0.0'
+VERINFO = '{{cookiecutter.script_version}}'
 
 LICENSE = "ISC License"
 LICENSE_URL = "https://choosealicense.com/licenses/isc/"

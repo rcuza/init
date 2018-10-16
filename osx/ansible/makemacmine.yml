@@ -27,6 +27,7 @@
       - awless
       - bash-completion
       - consul
+      - cowsay
       - dos2unix
       - git
       - gnuplot
@@ -69,6 +70,7 @@
       - mactex
       - nightingale
       - racket
+      - signal
       - slack
       - sourcetree
       - spotify

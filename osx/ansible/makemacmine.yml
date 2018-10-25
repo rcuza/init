@@ -44,6 +44,7 @@
       - ruby
       - shellcheck
       - terraform
+      - tig
       - tree
       - vagrant-completion
       - vault

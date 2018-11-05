@@ -4,6 +4,9 @@
   gather_facts: yes
   connection: local
 
+  vars_files:
+    - default_config.yml
+
   tasks:
   - name: create dev folder
     file:
@@ -18,79 +21,24 @@
 
   - name: brew taps
     homebrew:
-      name: "{{ item }}"
+      name: "{{ homebrew_taps }}"
       state: present
-      update_homebrew: yes
-      upgrade_all: yes
-    with_items:
-      - awscli
-      - awless
-      - bash-completion
-      - consul
-      - cowsay
-      - dos2unix
-      - git
-      - gnuplot
-      - graphviz
-      - gron
-      - htop
-      - jq
-      - lua
-      - luajit
-      - macvim
-      - mas
-      - openvpn
-      - packer
-      - ruby
-      - shellcheck
-      - terraform
-      - tig
-      - tree
-      - vagrant-completion
-      - vault
+      update_homebrew: '{{ configure.update_homebrew }}'
+      upgrade_all: '{{ configure.upgrade_all_taps }}'
 
   - name: brew cask taps
     homebrew_cask:
-      name: "{{ item }}"
+      name: "{{ homebrew_cask_taps }}"
       state: present
-      update_homebrew: yes
-    with_items:
-      - amazon-music
-      - calibre
-      - colloquy
-      - diffmerge
-      - dropbox
-      - encryptr
-      - firefox
-      - fluid
-      - google-chrome
-      - iterm2
-      - java8
-      - kindle
-      - libreoffice
-      - mactex
-      - nightingale
-      - racket
-      - signal
-      - slack
-      - sourcetree
-      - spotify
-      - textmate
-      - vagrant
-        #- virtualbox
-        #- visual-studio-code
-      - vlc
-      ## optional taps
-      #- malwarebytes
-      #- menumeters
-      #- yujitach-menumeters
+      update_homebrew: '{{ configure.update_homebrew }}'
+      upgrade_all: '{{ configure.upgrade_all_cask_taps }}'
 
   roles:
     - bash-profile-on-osx
-      # using Docker for Mac (Nov 2017)
-      # - docker-on-osx
-    - kubernetes-on-osx
-      #- chef-ops
+    # using Docker for Mac (Nov 2017)
+    # - docker-on-osx
+    #- kubernetes-on-osx
+    #- chef-ops
     - go-on-osx
     - python-on-osx
     - ssh-on-osx

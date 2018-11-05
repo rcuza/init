@@ -1,0 +1,66 @@
+---
+configure:
+  # TODO dotfiles: true
+  # TODO sudoers: true
+  # TODO osx_apps: false
+  update_homebrew: true
+  upgrade_all_taps: true
+  upgrade_all_cask_taps: true
+
+homebrew_taps:
+  - awscli
+  - awless
+  - bash-completion
+  - consul
+  - cowsay
+  - dos2unix
+  - git
+  - gnuplot
+  - graphviz
+  - gron
+  - htop
+  - jq
+  - lua
+  - luajit
+  - macvim
+  - mas
+  - openvpn
+  - packer
+  - ruby
+  - shellcheck
+  - terraform
+  - tig
+  - tree
+  - vagrant-completion
+  - vault
+
+homebrew_cask_taps:
+  - amazon-music
+  - calibre
+  - colloquy
+  - diffmerge
+  - dropbox
+  - encryptr
+  - firefox
+  - fluid
+  - google-chrome
+  - iterm2
+  - java8
+  - kindle
+  - libreoffice
+  - mactex
+  - nightingale
+  - racket
+  - signal
+  - slack
+  - sourcetree
+  - spotify
+  - textmate
+  - vagrant
+    #- virtualbox
+    #- visual-studio-code
+  - vlc
+  ## optional taps
+  #- malwarebytes
+  #- menumeters
+  #- yujitach-menumeters

@@ -54,7 +54,7 @@ then
           |_|/_/_/_/    / /  /  /
                         -/__/__/
 EOF
-  cd ansible && ansible-playbook makemacmine.yml && cd -
+  cd ansible && ansible-playbook provision-my-mac.yml -K && cd -
 else
   echo "ERR missing ansible directory"
   echo "you might need to run 'git clone https://github.com/rcuza/init.git' to get it"

@@ -40,3 +40,4 @@
   with_items:
     - virtualenv
     - virtualenvwrapper
+    - pipenv

@@ -89,8 +89,8 @@
     - bash-profile-on-osx
       # using Docker for Mac (Nov 2017)
       # - docker-on-osx
-    - kubernetes-on-osx
-      #- chef-ops
+      # - kubernetes-on-osx
+      # - chef-ops
     - go-on-osx
     - python-on-osx
     - ssh-on-osx

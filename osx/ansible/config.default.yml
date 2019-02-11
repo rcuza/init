@@ -1,0 +1,59 @@
+---
+
+my_brews:
+  - awscli
+  - awless
+  - bash-completion
+  - consul
+  - cowsay
+  - dos2unix
+  - git
+  - gnuplot
+  - graphviz
+  - gron
+  - htop
+  - jq
+  - lua
+  - luajit
+  - macvim
+  - mas
+  - openvpn
+  - packer
+  - ruby
+  - shellcheck
+  - terraform
+  - tig
+  - tree
+  - vagrant-completion
+  - vault
+
+my_casks:
+  - amazon-music
+  - calibre
+  - colloquy
+  - diffmerge
+  - dropbox
+  - encryptr
+  - firefox
+  - fluid
+  - google-chrome
+  - iterm2
+  - java8
+  - kindle
+  - libreoffice
+  - mactex
+  - nightingale
+  - racket
+  - signal
+  - slack
+  - sourcetree
+  - spotify
+  - textmate
+  - vagrant
+    #- virtualbox
+    #- visual-studio-code
+  - vlc
+  ## optional taps
+  #- malwarebytes
+  #- menumeters
+  #- yujitach-menumeters

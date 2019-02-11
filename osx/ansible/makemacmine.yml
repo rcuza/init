@@ -4,6 +4,16 @@
   gather_facts: yes
   connection: local
 
+  vars_files:
+    - config.default.yml
+
+  # override default configs
+  pre_tasks:
+    - include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.local.yml"
+      tags: ["always"]
+
   tasks:
   - name: create dev folder
     file:
@@ -18,72 +28,19 @@
 
   - name: brew taps
     homebrew:
-      name: "{{ item }}"
+      name: "{{ my_brews }}"
       state: present
       update_homebrew: yes
       upgrade_all: yes
-    with_items:
-      - awscli
-      - awless
-      - bash-completion
-      - consul
-      - cowsay
-      - dos2unix
-      - git
-      - gnuplot
-      - graphviz
-      - gron
-      - htop
-      - jq
-      - lua
-      - luajit
-      - macvim
-      - mas
-      - openvpn
-      - packer
-      - ruby
-      - shellcheck
-      - terraform
-      - tig
-      - tree
-      - vagrant-completion
-      - vault
+    tags: ["homebrew", "brews"]
 
   - name: brew cask taps
     homebrew_cask:
-      name: "{{ item }}"
+      name: "{{ my_casks }}"
       state: present
       update_homebrew: yes
-    with_items:
-      - amazon-music
-      - calibre
-      - colloquy
-      - diffmerge
-      - dropbox
-      - encryptr
-      - firefox
-      - fluid
-      - google-chrome
-      - iterm2
-      - java8
-      - kindle
-      - libreoffice
-      - mactex
-      - nightingale
-      - racket
-      - signal
-      - slack
-      - sourcetree
-      - spotify
-      - textmate
-      - vagrant
-        #- virtualbox
-        #- visual-studio-code
-      - vlc
-      ## optional taps
-      #- malwarebytes
-      #- menumeters
-      #- yujitach-menumeters
+    tags: ["homebrew", "casks"]
+
 
   roles:
     - bash-profile-on-osx

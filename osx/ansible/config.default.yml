@@ -8,6 +8,7 @@ my_brews:
   - cowsay
   - dos2unix
   - git
+  - git-lfs
   - gnuplot
   - graphviz
   - gron
